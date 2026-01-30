@@ -11,10 +11,10 @@
     <style>
         :root {
             --primary: #4f46e5;
-            --bg: #f4f6fb;
-            --card: #ffffff;
-            --text: #1f2937;
-            --muted: #6b7280;
+            --background: #f4f6fb;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
             --border: #e5e7eb;
         }
 
@@ -26,8 +26,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
+            background-color: var(--background);
+            color: var(--text-main);
             line-height: 1.7;
         }
 
@@ -37,77 +37,130 @@
             padding: 0 20px;
         }
 
+        /* Header */
         .header {
             text-align: center;
             margin-bottom: 40px;
         }
 
         .header h1 {
-            font-size: 32px;
+            font-size: 34px;
             font-weight: 700;
             color: var(--primary);
         }
 
         .header p {
-            margin-top: 8px;
-            color: var(--muted);
+            margin-top: 10px;
             font-size: 14px;
+            color: var(--text-muted);
         }
 
+        /* Card */
         .card {
-            background: var(--card);
+            background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 28px;
             margin-bottom: 24px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
         }
 
         .card h2 {
             font-size: 20px;
-            margin-bottom: 12px;
             color: var(--primary);
+            margin-bottom: 12px;
         }
 
         .card p {
             margin-bottom: 12px;
+            font-size: 15px;
         }
 
         .card ul {
-            padding-left: 18px;
+            padding-left: 20px;
         }
 
         .card ul li {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
+            font-size: 15px;
         }
 
         .highlight {
             font-weight: 600;
         }
 
-        .footer {
+        /* Contact Card */
+        .contact {
             text-align: center;
-            font-size: 14px;
-            color: var(--muted);
-            margin-top: 30px;
+        }
+
+        .contact ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .contact li {
+            margin-bottom: 6px;
         }
 
         a {
             color: var(--primary);
             text-decoration: none;
+            font-weight: 500;
         }
 
         a:hover {
             text-decoration: underline;
         }
 
-        @media (max-width: 600px) {
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* =======================
+           Media Queries
+        ======================= */
+
+        /* Tablets */
+        @media (max-width: 768px) {
             .header h1 {
-                font-size: 26px;
+                font-size: 28px;
             }
 
             .card {
-                padding: 22px;
+                padding: 24px;
+            }
+        }
+
+        /* Mobile Devices */
+        @media (max-width: 480px) {
+            .container {
+                margin: 24px auto;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .header p {
+                font-size: 13px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .card h2 {
+                font-size: 18px;
+            }
+
+            .card p,
+            .card ul li {
+                font-size: 14px;
             }
         }
     </style>
@@ -117,21 +170,21 @@
 <div class="container">
 
     <div class="header">
-        <h1>Privacy Policy:</h1>
-        <p>Quick Status Saver • Effective Date: 31-01-2026</p>
+        <h1>Privacy Policy</h1>
+        <p>Quick Status Saver • Effective Date: 31 January 2026</p>
     </div>
 
     <div class="card">
         <p>
             <span class="highlight">Quick Status Saver</span> is committed to protecting user privacy.
-            This Privacy Policy explains how the application handles information.
+            This Privacy Policy explains how the application handles information and user data.
         </p>
     </div>
 
     <div class="card">
-        <h2>Information Collection:</h2>
+        <h2>Information Collection</h2>
         <p>
-            We do not collect, store, or share any personal or sensitive user data, including but not limited to:
+            We do not collect, store, or share any personal or sensitive user data, including but not limited to the following:
         </p>
         <ul>
             <li>Names</li>
@@ -141,70 +194,72 @@
             <li>Messages</li>
         </ul>
         <p>
-            All media processing and storage are performed locally on the user's device.
+            All media processing and storage occur locally on the user’s device.
         </p>
     </div>
 
     <div class="card">
-        <h2>Media Permissions:</h2>
+        <h2>Media Permissions</h2>
         <ul>
-            <li>The app accesses storage only after user approval to detect and save status media.</li>
-            <li>Android Scoped Storage is used to ensure secure and limited file access.</li>
+            <li>The app accesses device storage only after user consent.</li>
+            <li>Storage access is required solely to detect and save status media.</li>
+            <li>Android Scoped Storage is used to ensure secure and limited access.</li>
         </ul>
     </div>
 
     <div class="card">
-        <h2>Auto Backup & Data Retention:</h2>
+        <h2>Auto Backup & Data Retention</h2>
         <ul>
-            <li>Status media viewed by the user may be temporarily stored.</li>
+            <li>Status media viewed by the user may be temporarily stored on the device.</li>
             <li>All stored content is automatically deleted after 7 days.</li>
-            <li>Users may manually delete files at any time.</li>
+            <li>Users can manually delete saved files at any time.</li>
         </ul>
     </div>
 
     <div class="card">
-        <h2>Advertising Services:</h2>
+        <h2>Advertising Services</h2>
         <ul>
-            <li>We use Google AdMob to serve advertisements.</li>
-            <li>Google AdMob may collect anonymous identifiers such as Advertising ID in accordance with Google’s Privacy Policy.</li>
+            <li>The app uses Google AdMob to display advertisements.</li>
+            <li>Google AdMob may collect anonymous identifiers, such as the Advertising ID, in accordance with Google’s Privacy Policy.</li>
         </ul>
     </div>
 
     <div class="card">
-        <h2>Data Security:</h2>
+        <h2>Data Security</h2>
         <ul>
             <li>No user data is transmitted to external servers.</li>
-            <li>All processing remains within the user’s device.</li>
+            <li>All app functionality operates entirely on the user’s device.</li>
         </ul>
     </div>
 
     <div class="card">
-        <h2>User Responsibility:</h2>
+        <h2>User Responsibility</h2>
         <ul>
-            <li>Users must obtain proper permission before saving or sharing any third-party content.</li>
-            <li>The developer is not responsible for misuse of downloaded media.</li>
+            <li>Users are responsible for obtaining permission before saving or sharing third-party content.</li>
+            <li>The developer is not liable for misuse of downloaded media.</li>
         </ul>
     </div>
 
     <div class="card">
-        <h2>Third-Party Affiliation Disclaimer:</h2>
+        <h2>Third-Party Disclaimer</h2>
         <ul>
-            <li>Quick Status Saver is an independent application and is not affiliated with WhatsApp or WhatsApp Business.</li>
+            <li>Quick Status Saver is an independent application.</li>
+            <li>It is not affiliated with WhatsApp or WhatsApp Business.</li>
             <li>WhatsApp is a registered trademark of WhatsApp LLC.</li>
         </ul>
     </div>
 
     <div class="card">
-        <h2>Policy Updates:</h2>
+        <h2>Policy Updates</h2>
         <ul>
-            <li>This Privacy Policy may be updated periodically.</li>
-            <li>Changes will be reflected on this page.</li>
+            <li>This Privacy Policy may be updated from time to time.</li>
+            <li>Any changes will be reflected on this page.</li>
         </ul>
     </div>
 
-    <div class="card" style="text-align: center; padding: 20px;">
-        <h2 style="text-decoration: underline;">Contact:</h2>
-        <ul style="list-style: none;">
+    <div class="card contact">
+        <h2>Contact Information</h2>
+        <ul>
             <li><strong>Developer:</strong> Aditya Kumar</li>
             <li><strong>Email:</strong> <a href="mailto:adityalabs.apps@gmail.com">adityalabs.apps@gmail.com</a></li>
         </ul>
@@ -218,4 +273,3 @@
 
 </body>
 </html>
-
